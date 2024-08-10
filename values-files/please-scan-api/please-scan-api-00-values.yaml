@@ -1,0 +1,24 @@
+
+please-scan-api:
+  enabled: true
+  nameOverride: please-scan-api
+
+  ingress:
+    enabled: false
+
+  podDisruptionBudget:
+    enabled: false
+
+  pods:
+    controller: deployment
+
+    image:
+      name: asia-southeast1-docker.pkg.dev/its-artifact-commons/please-scan/please-scan-api
+
+  service:
+    enabled: true
+    ports:
+      - port: 80
+        targetPort: 8080
+        protocol: TCP
+        name: http

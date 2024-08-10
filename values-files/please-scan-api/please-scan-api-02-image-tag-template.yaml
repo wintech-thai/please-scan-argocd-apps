@@ -1,0 +1,5 @@
+
+please-scan-api:
+  pods:
+    image:
+      tag: "<<image-tag>>"

@@ -1,0 +1,24 @@
+apiVersion: v2
+name: helm-erp
+description: A Helm chart for Please-Scan
+
+type: application
+
+version: 1.0.0
+
+appVersion: "1.0"
+
+dependencies:
+  ### pgSQL ###
+  - name: "postgresql"
+    alias: postgresql-please-scan
+    condition: postgresql-please-scan.enabled
+    repository: "https://charts.bitnami.com/bitnami"
+    version: "15.2.9"
+
+  ### please-scan-api ###
+  - name: "generic-app"
+    alias: please-scan-api
+    condition: please-scan-api.enabled
+    repository: "https://charts.visonneau.fr/"
+    version: "0.0.14"
