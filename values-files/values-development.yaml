@@ -1,0 +1,4 @@
+---
+envAlias: development
+domainAPI: api-dev.please-scan.com
+domainScanAPI: scan-dev.please-scan.com

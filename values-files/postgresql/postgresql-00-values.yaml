@@ -1,0 +1,8 @@
+postgresql-please-scan:
+  enabled: true
+  fullnameOverride: postgresql-please-scan
+  auth:
+    database: please-scan
+    existingSecret: please-scan-postgres-secret
+    secretKeys:
+      adminPasswordKey: adminPasswordKey

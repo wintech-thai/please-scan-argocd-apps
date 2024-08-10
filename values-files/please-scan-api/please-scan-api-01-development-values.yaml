@@ -1,0 +1,38 @@
+please-scan-api:
+  pods:
+    replicas: 1
+
+    resources:
+      limits:
+        cpu: 200m
+        memory: 200Mi
+      requests:
+        cpu: 150m
+        memory: 100Mi
+
+    env:
+      # To solve ulimit(128) issue
+      - name: DOTNET_USE_POLLING_FILE_WATCHER
+        value: "true"
+
+      - name: ASPNETCORE_ENVIRONMENT
+        value: "Development"
+
+      - name: IsDev
+        value: "true"
+
+      - name: PostgreSQL_Host
+        value: "postgresql-please-scan"
+
+      - name: PostgreSQL_Database
+        value: "please-scan"
+
+      - name: PostgreSQL_User
+        value: "postgres"
+
+      - name: PostgreSQL_Password
+        valueFrom:
+          secretKeyRef:
+            name: please-scan-postgres-secret
+            key: adminPasswordKey
+            optional: false

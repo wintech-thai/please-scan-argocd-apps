@@ -1,1 +1,0 @@
-# please-scan-argocd-apps

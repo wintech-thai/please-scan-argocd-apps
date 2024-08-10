@@ -1,0 +1,6 @@
+
+please-scan-api:
+  pods:
+    image:
+      tag: "v0.0.1"
+# Wed Apr  3 03:50:00 UTC 2024
