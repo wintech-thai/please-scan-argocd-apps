@@ -2,4 +2,4 @@
 please-scan-api:
   pods:
     image:
-      tag: "main-75048a6"
+      tag: "develop-2037940"
